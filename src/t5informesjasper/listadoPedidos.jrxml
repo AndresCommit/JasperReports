@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.5.final using JasperReports Library version 6.21.5-74d586df47b25dbd05bd0957999819196e59934a  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="listadoPedidos" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4ea3f4c0-75a0-456e-9f5e-e827d9e563a4">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="jdbcAdapter"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM pedidos]]>
+	</queryString>
+	<field name="ID_Pedido" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="ID_Pedido"/>
+		<property name="com.jaspersoft.studio.field.label" value="ID_Pedido"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pedidos"/>
+	</field>
+	<field name="ID_Cliente" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="ID_Cliente"/>
+		<property name="com.jaspersoft.studio.field.label" value="ID_Cliente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pedidos"/>
+	</field>
+	<field name="Fecha_Pedido" class="java.time.LocalDateTime">
+		<property name="com.jaspersoft.studio.field.name" value="Fecha_Pedido"/>
+		<property name="com.jaspersoft.studio.field.label" value="Fecha_Pedido"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pedidos"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="190" y="10" width="180" height="30" uuid="b17c551e-5b6c-4120-bfa6-c5899f3eb50c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" size="16"/>
+				</textElement>
+				<text><![CDATA[Listado de Pedidos]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<line>
+				<reportElement x="70" y="40" width="425" height="1" uuid="1c9a38cc-964e-485d-8501-93d3d42925c4"/>
+			</line>
+			<line>
+				<reportElement x="69" y="4" width="425" height="1" uuid="96a4ebf1-0e84-4f29-9179-a007f1d761d8"/>
+			</line>
+			<staticText>
+				<reportElement x="100" y="10" width="59" height="30" uuid="9388b8e9-3fd0-4b3c-abd2-2c91cbe0f690"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[ID Pedido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="251" y="11" width="59" height="30" uuid="786f8943-935c-4931-8edd-b3190a07ec03"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[ID Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="399" y="5" width="82" height="30" uuid="e573261d-eb94-4fb7-a6c3-b78522cc9f5a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Fecha Pedido]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="80" y="40" width="100" height="30" uuid="ec246713-48ec-4318-a415-65f23f209c41">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="563691f0-0417-4c33-a5ac-7d458066afaf"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{ID_Pedido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="227" y="40" width="100" height="30" uuid="c5c62cde-bfa1-4c68-b4ca-1915da13b221">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a7847462-6510-4d0f-942f-9de8a5aebd37"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{ID_Cliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="40" width="100" height="30" uuid="cf6c97e1-e659-48d3-88b8-2b7d7a89279f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b57b0405-d29e-47f4-b449-6608fcd8708e"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Fecha_Pedido}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="0" y="12" width="100" height="30" uuid="6c006b91-87f2-4f78-9fa3-5c6ba1ebe27e"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="470" y="10" width="100" height="30" uuid="ebdc885f-7b23-4b83-b3da-418a7cd8d75f"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

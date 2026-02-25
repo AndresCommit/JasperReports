@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.5.final using JasperReports Library version 6.21.5-74d586df47b25dbd05bd0957999819196e59934a  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="listadoEmails" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="679d35ce-4208-4854-b347-b6734596dc3b">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="jdbcAdapter"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM emails]]>
+	</queryString>
+	<field name="Id_cliente" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="Id_cliente"/>
+		<property name="com.jaspersoft.studio.field.label" value="Id_cliente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="emails"/>
+	</field>
+	<field name="Email" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Email"/>
+		<property name="com.jaspersoft.studio.field.label" value="Email"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="emails"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="51" splitType="Stretch">
+			<staticText>
+				<reportElement x="190" y="10" width="180" height="30" uuid="c23b83fa-4f10-437e-8527-5e42bd84084c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" size="16"/>
+				</textElement>
+				<text><![CDATA[Listado de Emails]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="150" y="15" width="59" height="30" uuid="3830d1c5-269d-4218-ba2b-e0a129ee4ae3"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[ID Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="15" width="59" height="30" uuid="8539db73-e13c-4777-9771-412818b7d873"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[E-Mail]]></text>
+			</staticText>
+			<line>
+				<reportElement x="69" y="4" width="425" height="1" uuid="604c104f-4b7e-4e54-923d-741759c05f95"/>
+			</line>
+			<line>
+				<reportElement x="70" y="40" width="425" height="1" uuid="c1987477-f80d-4204-9332-ff9073bde3a6"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="129" y="20" width="100" height="30" uuid="65b4b87b-44f1-4f6f-bd21-8800b4a03b1e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="84a7a8c9-6129-4363-bf70-93b5ca3934ab"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Id_cliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="329" y="20" width="100" height="30" uuid="1a33a60f-1760-4413-b9fd-0d8c607e6f6b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c1b80bf5-f4db-4ee0-838e-4a6176f08a58"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Email}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="0" y="12" width="100" height="30" uuid="45541616-4363-406f-8fa4-5410275126bf"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="470" y="10" width="100" height="30" uuid="b5150f73-1deb-420b-a059-4877a8cad6cc"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
